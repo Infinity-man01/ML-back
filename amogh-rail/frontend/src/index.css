@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+@theme {
+  --font-rail-sans: "Barlow Condensed", sans-serif;
+  --font-rail-mono: "Space Mono", monospace;
+  --color-rail-navy: #0d1b2a;
+  --color-rail-red: #c0392b;
+  --color-rail-green: #2e7d32;
+  --color-rail-amber: #e8a33d;
+  --color-rail-text: #f2ede3;
+  --color-rail-steel: #5b7c99;
+}
+
+:root {
+  font-family: "Barlow Condensed", sans-serif;
+  background-color: #0d1b2a;
+  color: #f2ede3;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+#root {
+  width: 100%;
+  height: 100vh;
+}
+
+/* Custom map popups for dark mode */
+.leaflet-popup-content-wrapper {
+  background-color: #0d1b2a !important;
+  color: #f2ede3 !important;
+  border-radius: 0 !important;
+  border: 1px solid #5b7c99 !important;
+}
+.leaflet-popup-tip {
+  background-color: #0d1b2a !important;
+}
+
+/* Split Flap Animation Classes */
+.split-flap-container {
+  perspective: 1000px;
+}
+
+.flap-top, .flap-bottom {
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+@keyframes flipTop {
+  0% { transform: rotateX(0deg); }
+  100% { transform: rotateX(-90deg); }
+}
+
+@keyframes flipBottom {
+  0% { transform: rotateX(90deg); }
+  100% { transform: rotateX(0deg); }
+}
+
+.anim-flip-top {
+  animation: flipTop 0.05s ease-in forwards;
+}
+
+.anim-flip-bottom {
+  animation: flipBottom 0.05s ease-out 0.05s forwards;
+}
+
+/* Custom Scrollbar for Logbook */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #1a334d;
+  border-radius: 4px;
+}

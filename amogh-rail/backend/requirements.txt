@@ -1,0 +1,12 @@
+fastapi
+uvicorn
+simpy
+websockets
+pydantic
+
+joblib
+scikit-learn
+
+rich
+pandas
+ortools
